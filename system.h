@@ -48,7 +48,6 @@ date_t add;
 date_t add_2;
 opt_t up;
 
-
 void fordelay(int j);
 void cclose(void);
 void menu(void);
@@ -56,3 +55,4 @@ void new_acc(void);
 void edit(void);
 void view_list(void);
 void erase(void);
+void transact(void);
