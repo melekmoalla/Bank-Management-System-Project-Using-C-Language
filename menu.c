@@ -7,6 +7,7 @@ void menu(void)
     option_t op[] = {{1, new_acc},
                      {2, edit},
                      {3, transact},
+                     {4, see},
                      {5, erase},
                      {6, view_list},
                      {7, cclose},
