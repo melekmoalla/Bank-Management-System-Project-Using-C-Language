@@ -3,10 +3,21 @@
 /***************************************chek of the alphabet if there are or not ******************/
 int _islower(char *c)
 {
+    int a = 0;
+    char m[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
     for (int i = 0; i < strlen(c); i++)
     {
-        if (c[i] >= 'A' && c[i] <= 'z')
+        for (int j = 0; j <= 9; j++)
+        {
+            if (c[i] == m[j])
+            {
+                a = 1;
+            }
+        }
+        if (a != 1)
+        {
             return (1);
+        }
     }
 
     return (0);
@@ -122,16 +133,21 @@ account_no:
     strcpy(&add.year, s1);
 
     /*******************condition for the account number***************/
-    printf("\nEnter the account number:");
+    printf("\nEnter the account number: ");
     scanf("%s", &up.acc_no);
-    while (_islower(&up.acc_no) != 0)
+    while (1)
     {
-        printf("\nwrite carefull\n");
-        printf("\nEnter the account number:");
+        if (_islower(&up.acc_no) != 0)
+        {
+            printf("\nwrite carefull\n");
+            printf("\nEnter the account number:");
+        }
+        else
+            break;
         scanf("%s", &up.acc_no);
     }
-
-    /*******************condition for the account number**************/
+    printf("\n%s", &up.acc_no);
+    /*******************condition for the account number********************************************
     printf("\nEnter the name:");
     scanf("%s", up.name);
     while (has_number(up.name) == 1)
