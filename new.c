@@ -1,5 +1,6 @@
 #include "system.h"
 
+/***************************************chek of the alphabet if there are or not ******************/
 int _islower(char *c)
 {
     for (int i = 0; i < strlen(c); i++)
@@ -11,6 +12,7 @@ int _islower(char *c)
     return (0);
 }
 
+/*********************check of the number of there are or not ***************** */
 bool has_number(const char *string)
 {
     for (int i = 0; string[i] != '\0'; i++)
@@ -22,6 +24,8 @@ bool has_number(const char *string)
     }
     return false;
 }
+
+/**************************check of the year birth *******************************/
 int _check1(char *s)
 {
     if (s[0] == '0')
@@ -37,6 +41,8 @@ int _check1(char *s)
         return (1);
     }
 }
+
+/************************* check of the  month *******************************/
 int _check(char *s)
 {
     if (s[0] == '0')
@@ -48,6 +54,8 @@ int _check(char *s)
         return (1);
     }
 }
+
+/*************************check of the year **************************************/
 int _check2(char *s)
 {
     if (s[3] == '\0')
@@ -60,14 +68,7 @@ int _check2(char *s)
     }
 }
 
-int _strlen(char *s)
-{
-    int i;
-
-    for (i = 0; s[i] != '\0'; ++i)
-        ;
-    return (i);
-}
+/****************************** function creat new account *********************************************/
 
 void new_acc(void)
 {
