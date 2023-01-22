@@ -18,6 +18,7 @@ int _islower(char *c)
         {
             return (1);
         }
+        a = 0;
     }
 
     return (0);
@@ -26,14 +27,78 @@ int _islower(char *c)
 /*********************check of the number of there are or not ***************** */
 bool has_number(const char *string)
 {
-    for (int i = 0; string[i] != '\0'; i++)
+    int a = 0;
+    char m[] = {
+        'A',
+        'B',
+        'C',
+        'D',
+        'E',
+        'F',
+        'G',
+        'H',
+        'I',
+        'J',
+        'K',
+        'L',
+        'M',
+        'N',
+        'O',
+        'P',
+        'Q',
+        'R',
+        'S',
+        'T',
+        'U',
+        'V',
+        'W',
+        'X',
+        'Y',
+        'Z',
+        'a',
+        'b',
+        'c',
+        'd',
+        'e',
+        'f',
+        'g',
+        'h',
+        'i',
+        'j',
+        'k',
+        'l',
+        'm',
+        'n',
+        'o',
+        'p',
+        'q',
+        'r',
+        's',
+        't',
+        'u',
+        'v',
+        'w',
+        'x',
+        'y',
+        'z',
+    };
+    for (int i = 0; i < strlen(string); i++)
     {
-        if (isdigit(string[i]))
+        for (int j = 0; j < 52; j++)
         {
-            return true;
+            if (string[i] == m[j])
+            {
+                a = 1;
+            }
         }
+        if (a != 1)
+        {
+            return (1);
+        }
+        a = 0;
     }
-    return false;
+
+    return (0);
 }
 
 /**************************check of the year birth *******************************/
@@ -109,7 +174,7 @@ account_no:
     char s2[20000];
     strcpy(s2, &add.month);
     /**************condityhon for the day*****************************/
-    printf("\n\n\nEnter today's day(%s/ dd :", s2);
+    printf("\n\n\nEnter today's day(%s/ dd : ", s2);
     scanf("%s", &add.day);
     while (1)
     {
@@ -117,7 +182,7 @@ account_no:
         {
             printf("\nwrite carefull\n");
             printf("please write the date like this example -> (01/01/2023");
-            printf("\n\n\nEnter today's day(%s/ dd :", s2);
+            printf("\n\n\nEnter today's day(%s/ dd : ", s2);
         }
         else
             break;
@@ -133,27 +198,26 @@ account_no:
     strcpy(&add.year, s1);
 
     /*******************condition for the account number***************/
-    printf("\nEnter the account number: ");
+    printf("\n\nEnter the account number: ");
     scanf("%s", &up.acc_no);
     while (1)
     {
         if (_islower(&up.acc_no) != 0)
         {
             printf("\nwrite carefull\n");
-            printf("\nEnter the account number:");
+            printf("\nEnter the account number: ");
         }
         else
             break;
         scanf("%s", &up.acc_no);
     }
-    printf("\n%s", &up.acc_no);
-    /*******************condition for the account number********************************************
+    /*******************condition for the account number****************/
     printf("\nEnter the name:");
     scanf("%s", up.name);
     while (has_number(up.name) == 1)
     {
-        printf("write curful !!!!\n");
-        printf("\nEnter the name:");
+        printf("\nwrite carefull\n");
+        printf("\nEnter the name: ");
         scanf("%s", up.name);
     }
     /**********************condition  for the date of birth*************/
